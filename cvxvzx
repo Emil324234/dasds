@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-df = pd.read_csv("E:\OneDrive\Рабочий стол\sda.csv", encoding="utf-8")
+df = pd.read_csv("sda.csv", encoding="utf-8")
 username = input("Введите ваше имя: \n")
 d = {"name": username}
 
@@ -10,4 +10,4 @@ j = json.loads(json.dumps(d))
 if j["name"] not in df["name"].to_list():
     df = pd.concat([df, pd.DataFrame({"name":[j["name"]]})], ignore_index=True)
     df = df["name"]
-    df.to_csv("E:\OneDrive\Рабочий стол\sda.csv", encoding="utf-8")
+    df.to_csv("sda.csv", encoding="utf-8")
